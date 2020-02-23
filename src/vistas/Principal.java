@@ -159,9 +159,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         
-        JOptionPane.showMessageDialog(this, "Esta opción aún no esta disponible!");
-        //Usuarios u = new Usuarios();
-        //centrar(u);
+        VendedorForm v = new VendedorForm();
+        centrar(v);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -184,9 +183,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        JOptionPane.showMessageDialog(this, "Esta opción aún no esta disponible!");
-        //Producto p = new Producto();
-        //centrar(p);
+        ProductoForm p = new ProductoForm();
+        centrar(p);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
