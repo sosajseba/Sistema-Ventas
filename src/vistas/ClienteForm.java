@@ -101,11 +101,12 @@ public class ClienteForm extends javax.swing.JInternalFrame {
         btnAgregarCliente = new javax.swing.JButton();
         btnActualizarCliente = new javax.swing.JButton();
         btnEliminarCliente = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
 
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(640, 480));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -148,11 +149,11 @@ public class ClienteForm extends javax.swing.JInternalFrame {
             }
         });
 
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
-        btnLimpiar.setToolTipText("Buscar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
+        btnBuscar.setToolTipText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -180,7 +181,7 @@ public class ClienteForm extends javax.swing.JInternalFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnActualizarCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -210,7 +211,7 @@ public class ClienteForm extends javax.swing.JInternalFrame {
                             .addComponent(jLabel4)
                             .addComponent(telCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnEliminarCliente)
-                    .addComponent(btnLimpiar))
+                    .addComponent(btnBuscar))
                 .addGap(35, 35, 35))
         );
 
@@ -322,19 +323,19 @@ public class ClienteForm extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dniClienteActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
         listarBusqueda();
         limpiar();
 
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarCliente;
     private javax.swing.JButton btnAgregarCliente;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton btnLimpiar;
     private javax.swing.JTextField dirCliente;
     private javax.swing.JTextField dniCliente;
     private javax.swing.JLabel jLabel1;

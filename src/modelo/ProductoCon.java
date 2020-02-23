@@ -11,49 +11,19 @@ import java.util.List;
  *
  * @author sosaj
  */
-public class VendedorCon implements Crud{
- 
+public class ProductoCon implements Crud{
+
     Connection con;
     Conexion cn = new Conexion();
     PreparedStatement ps;
     ResultSet rs;
-    
-    public Usuario validarUsuario(String dni,String user){
-        
-        String consulta = "select * from vendedor where dni=? and user=? ";
-        Usuario u = new Usuario();
-        
-        try {
-            
-            con = cn.conectar();
-            ps = con.prepareStatement(consulta);
-            ps.setString(1, dni);
-            ps.setString(2, user);
-            rs = ps.executeQuery();
-            
-            while (rs.next()) {                
-                
-                u.setId(1);
-                u.setDni(rs.getString(2));
-                u.setNombre(rs.getString(3));
-                u.setTelefono(rs.getString(4));
-                u.setUsuario(rs.getString(5));
-                
-            }
-            
-        } catch (SQLException e) {
-        }
-        
-        return u;
-        
-    }
-    
+
     @Override
     public List listar() {
         
-        List<Vendedor> listaVendedor = new ArrayList<>();
+        List<Producto> listaProductos = new ArrayList<>();
         
-        String consulta = "select * from vendedor";
+        String consulta = "select * from producto";
         
         try {
             
@@ -63,29 +33,28 @@ public class VendedorCon implements Crud{
             
             while (rs.next()) {                
                 
-                Vendedor v = new Vendedor();
-                v.setId(rs.getInt(1));
-                v.setNombre(rs.getString(2));
-                v.setDni(rs.getString(3));
-                v.setTel(rs.getString(4));
-                v.setUser(rs.getString(5));
+                Producto p = new Producto();
+                p.setId(rs.getInt(1));
+                p.setPrecio(rs.getDouble(2));
+                p.setStock(rs.getInt(3));
+                p.setDescripcion(rs.getString(4));
                 
-                listaVendedor.add(v);
+                listaProductos.add(p);
                 
             }
             
         } catch (SQLException e) {
         }
         
-        return listaVendedor;
+        return listaProductos;
         
     }
     
-    public List listarBusqueda(String nombre) {
+    public List listarBusqueda(String descripcion) {
         
-        List<Vendedor> listaVendedor = new ArrayList<>();
+        List<Producto> listaProductos = new ArrayList<>();
         
-        String consulta = "select * from vendedor where dni like '"+nombre+"'";
+        String consulta = "select * from producto where descripcion like '%"+descripcion+"%'";
         
         try {
             
@@ -95,29 +64,27 @@ public class VendedorCon implements Crud{
             
             while (rs.next()) {                
                 
-                Vendedor v = new Vendedor();
-                v.setId(rs.getInt(1));
-                v.setNombre(rs.getString(2));
-                v.setDni(rs.getString(3));
-                v.setTel(rs.getString(4));
-                v.setUser(rs.getString(5));
+                Producto p = new Producto();
+                p.setId(rs.getInt(1));
+                p.setPrecio(rs.getDouble(2));
+                p.setStock(rs.getInt(3));
+                p.setDescripcion(rs.getString(4));
                 
-                listaVendedor.add(v);
+                listaProductos.add(p);
                 
             }
             
         } catch (SQLException e) {
         }
         
-        return listaVendedor;
+        return listaProductos;
         
     }
 
     @Override
     public int agregar(Object[] o) {
         int r = 0;
-        
-        String consulta = "insert into vendedor (nombre,dni,telefono,user) values(?,?,?,?)";
+        String consulta = "insert into producto (precio,stock,descripcion,estado) values(?,?,?,?)";
         
         try {
             
@@ -140,7 +107,7 @@ public class VendedorCon implements Crud{
     public int actualizar(Object[] o) {
         
         int r = 0;
-        String consulta = "update vendedor set nombre = ?, dni = ?, telefono = ?, user = ? where idvendedor = ?" ;
+        String consulta = "update producto set precio = ?, stock = ?, descripcion = ? where idproducto = ?" ;
         
         try {
             
@@ -150,7 +117,6 @@ public class VendedorCon implements Crud{
             ps.setObject(2, o[1]);
             ps.setObject(3, o[2]);
             ps.setObject(4, o[3]);
-            ps.setObject(5, o[4]);
             r = ps.executeUpdate();
             
         } catch (SQLException e) {
@@ -163,7 +129,7 @@ public class VendedorCon implements Crud{
     @Override
     public void eliminar(int id) {
         
-        String consulta = "delete from vendedor where id = ?";
+        String consulta = "delete from producto where idproducto = ?";
         
         try {
             

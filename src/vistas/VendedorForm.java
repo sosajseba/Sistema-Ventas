@@ -9,12 +9,12 @@ package vistas;
  *
  * @author sosaj
  */
-public class Usuarios extends javax.swing.JInternalFrame {
+public class VendedorForm extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Usuario
      */
-    public Usuarios() {
+    public VendedorForm() {
         initComponents();
     }
 
