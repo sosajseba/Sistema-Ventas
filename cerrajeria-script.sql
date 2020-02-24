@@ -111,3 +111,17 @@ INSERT INTO cerrajeria.cliente (dni,nombre,direccion,telefono) values
 ('44444444','Cliente 4','Calle 4','4444444444'),
 ('55555555','Cliente 5','Calle 5','5555555555'),
 ('66666666','Cliente 6','Calle 6','6666666666');
+
+INSERT INTO cerrajeria.vendedor (nombres,dni,telefono,user) values
+('Juan','38794933','1122535585','user1'),
+('Carlos','38794934','1111111111','user2');
+
+INSERT INTO cerrajeria.producto (precio,stock,descripcion,estado) values
+(100,1,'Producto 1',1),
+(200,2,'Producto 2',1),
+(300,3,'Producto 3',1),
+(400,4,'Producto 4',1),
+(500,5,'Producto 5',1),
+(600,6,'Producto 6',1),
+(700,7,'Producto 7',1),
+(800,8,'Producto 8',1);

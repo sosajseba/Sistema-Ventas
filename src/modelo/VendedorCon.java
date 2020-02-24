@@ -85,7 +85,7 @@ public class VendedorCon implements Crud{
         
         List<Vendedor> listaVendedor = new ArrayList<>();
         
-        String consulta = "select * from vendedor where dni like '"+nombre+"'";
+        String consulta = "select * from vendedor where nombres like '%"+nombre+"%'";
         
         try {
             
@@ -117,7 +117,7 @@ public class VendedorCon implements Crud{
     public int agregar(Object[] o) {
         int r = 0;
         
-        String consulta = "insert into vendedor (nombre,dni,telefono,user) values(?,?,?,?)";
+        String consulta = "insert into vendedor (nombres,dni,telefono,user) values(?,?,?,?)";
         
         try {
             
@@ -140,7 +140,7 @@ public class VendedorCon implements Crud{
     public int actualizar(Object[] o) {
         
         int r = 0;
-        String consulta = "update vendedor set nombre = ?, dni = ?, telefono = ?, user = ? where idvendedor = ?" ;
+        String consulta = "update vendedor set nombres = ?, dni = ?, telefono = ?, user = ? where idvendedor = ?" ;
         
         try {
             
